@@ -16,8 +16,13 @@ void create_process(pid_t pid)
     {
         case -1:
             fprintf(process_error_log(), "Error: process error...");
-        case 0:
-            create_thread();
+        case 0:  // execute the child process
+            puts("create_process...");
+            
+            void *(*fn)(void *) = libcurl_http; // fn is run in the background
+            // child inherits local variables - local to create_process(...)
+            create_thread(thread, fn, head);
+            break;
         default: 
             sleep(5);
             break;
