@@ -1,4 +1,5 @@
 #include "pt.h"
+#include "libcurl.h"
 
 int main(int argc, char **argv)
 {

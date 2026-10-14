@@ -12,6 +12,8 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
+#include "lc.h"
+
 void create_process(pid_t);
 
 #endif
