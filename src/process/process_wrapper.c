@@ -22,7 +22,7 @@ void create_process(pid_t pid, pthread_t thread) // pass two parameters
             puts("create_process...");
             
             // libcurl_http returns a pointer, hence *(*)()
-            void *(*fn)(void *) = curl_http; // fn is run in the background
+            void *(*fn)(void *) = curl_http_write; // fn is run in the background
             // child inherits local variables - local to create_process(...)
             create_thread(thread, fn, head); // pass two arguments
             break;

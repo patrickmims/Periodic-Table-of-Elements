@@ -20,6 +20,7 @@ add_executable(${PROJECT_NAME}
     ${SRC}/main.c
     ${SRC}/process/process_wrapper.c
     ${SRC}/ssh/sftp/sftp.c
+    ${SRC}/thread/thread_wrapper.c
 )
 
 target_include_directories(main PRIVATE ${MYSQLCLIENT_INCLUDE_DIRS})
