@@ -16,7 +16,10 @@ include_directories(${PROJECT_SOURCE_DIR})
 pkg_check_modules(MYSQLCLIENT REQUIRED mysqlclient)
 
 add_executable(${PROJECT_NAME} 
+    ${SRC}/libcurl/curl_http.c
     ${SRC}/main.c
+    ${SRC}/process/process_wrapper.c
+    ${SRC}/ssh/sftp/sftp.c
 )
 
 target_include_directories(main PRIVATE ${MYSQLCLIENT_INCLUDE_DIRS})
